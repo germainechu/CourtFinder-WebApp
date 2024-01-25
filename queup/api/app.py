@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey
 from datetime import datetime
@@ -38,8 +38,8 @@ class Queue_item(db.Model):
     #     self.time_joined = time_joined
 
 # route to get all courts in a location with location_id
-@app.route('/', methods = ['POST', 'GET'])
-def index():
+@app.route('/')
+def queue_up():
     ### TODO: data validation ###
     if request.method == 'POST':  # write a new queue_item to the db
         court_id = request.form['court_id']
@@ -70,4 +70,4 @@ def delete(queue_id):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(port = 3000, debug=True)
+    app.run(port = 5000, debug=True)
