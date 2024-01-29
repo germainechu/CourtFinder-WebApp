@@ -24,6 +24,7 @@ class Court(db.Model):
 
 class Queue_item(db.Model):
     queue_id = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
+    name = db.Column(db.String, nullable = False)
     court_id = db.Column(db.INTEGER, ForeignKey(Court.court_id), nullable=False)
     time_joined = db.Column(db.DateTime, default=datetime.now())
 

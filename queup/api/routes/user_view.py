@@ -48,9 +48,9 @@ def get_courts_in_location(location_id):
     else:
         return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
     
-# get all current queue items
-@user_view.route('/queues', methods=['GET'])
-def get_current_queues():
+@user_view.route('/queues', methods=['GET', 'POST'])
+def handle_queue():
+    # get all current queue items
     if  request.method == 'GET': 
         try:
             queue_items = Queue_item.query.order_by(Queue_item.time_joined).all()
@@ -68,17 +68,13 @@ def get_current_queues():
             # Print the exception to see what went wrong
             print(e)
             return jsonify({'status': 'error', 'message': 'There was an issue fetching current queue_items data'}), 500
-    else:
-        return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
 
-# add to a queue
-@user_view.route('/add', methods=['GET', "POST"])
-def join_the_queue():
+    # add a new user to a queue given username and court selected (court_id)
     if request.method == 'POST':  # write a new queue_item to the db
         request_data = request.get_json()
         name = request_data.get('name')
-        court_id = request_data.get('court_id')
-        new_queue_item = Queue_item(name= name, court_id=court_id) # create a new queue_item instance
+        court_id = request_data.get('court_id') 
+        new_queue_item = Queue_item(name=name, court_id=court_id) # create a new queue_item instance
 
         try:
             db.session.add(new_queue_item) # write the newly created instance to db
@@ -91,7 +87,6 @@ def join_the_queue():
         
         except Exception as e:
             print(e)
-            return 'There was an issue adding you to the queue', 500
+            return jsonify({'status': 'error', 'Message': 'There was an issue adding you to the queue, please try again'}), 500
     else: 
         return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
-    
