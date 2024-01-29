@@ -2,7 +2,7 @@ from flask import request, jsonify, Blueprint
 from database import db, Location, Court, Queue_item
 
 user_view = Blueprint('home_page', __name__)
-# display all locations 
+# get all locations 
 @user_view.route('/locations', methods=['GET'])
 def get_all_locations():
     if request.method == 'GET':
@@ -32,9 +32,9 @@ def get_all_locations():
 # get all courts with location id
 @user_view.route('/<int:location_id>', methods = ["GET", "POST"])
 def get_courts_in_location(location_id):
-    if request == "GET":
+    if request.method == "GET":
         try:
-            curr_courts = db.session.query(Court).filter(Court.location_id == 1003)
+            curr_courts = db.session.query(Court).filter(Court.location_id == location_id)
             data = []
             for curr_court in curr_courts:
                 data.append ({
@@ -42,7 +42,7 @@ def get_courts_in_location(location_id):
                     "total_waiting_time" : curr_court.total_waiting_time
                 })
                 
-            return jsonify({'status': "success", data: data}), 200
+            return jsonify({'status': "success", "data": data}), 200
         except:
             return jsonify({'status': 'error', 'message': 'There was an issue fetching current locations data'}), 500
     else:
@@ -69,8 +69,9 @@ def get_current_queues():
             print(e)
             return jsonify({'status': 'error', 'message': 'There was an issue fetching current queue_items data'}), 500
     else:
-        return 'hello world'
-    
+        return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
+
+# add to a queue
 @user_view.route('/add', methods=['GET', "POST"])
 def join_the_queue():
     if request.method == 'POST':  # write a new queue_item to the db
@@ -92,5 +93,5 @@ def join_the_queue():
             print(e)
             return 'There was an issue adding you to the queue', 500
     else: 
-        return "hello world"
+        return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
     
