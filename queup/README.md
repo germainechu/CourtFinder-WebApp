@@ -4,11 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory 'queup', you can run:
 
-### `npm start`
+### `yarn start-api`
 
-Runs the app in the development mode.\
+Runs the flask application in development mode.\
+
+### `yarn start` or `npm start`
+
+Runs the react app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
