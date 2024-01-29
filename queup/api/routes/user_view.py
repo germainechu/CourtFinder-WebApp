@@ -2,10 +2,55 @@ from flask import request, jsonify, Blueprint
 from database import db, Location, Court, Queue_item
 
 user_view = Blueprint('home_page', __name__)
-
+# display all locations 
+@user_view.route('/locations', methods=['GET'])
+def get_all_locations():
+    if request.method == 'GET':
+        try:
+            locations = Location.query.order_by(Location.location_id).all()
+            data = []
+            for loc in locations:
+                data.append({
+                    "location_id": loc.location_id,
+                    "location_name": loc.location_name,
+                    "address": loc.address,
+                    "court_count": loc.court_count
+                })
+            response_data = {
+                'status': "success",
+                'data': data
+            }
+            return jsonify(response_data), 200
+            
+        except Exception as e:
+            # Print the exception to see what went wrong
+            print(e)
+            return jsonify({'status': 'error', 'message': 'There was an issue fetching current locations data'}), 500
+    else:
+        return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
+    
+# get all courts with location id
+@user_view.route('/<int:location_id>', methods = ["GET", "POST"])
+def get_courts_in_location(location_id):
+    if request == "GET":
+        try:
+            curr_courts = db.session.query(Court).filter(Court.location_id == 1003)
+            data = []
+            for curr_court in curr_courts:
+                data.append ({
+                    "court_id": curr_court.court_id,
+                    "total_waiting_time" : curr_court.total_waiting_time
+                })
+                
+            return jsonify({'status': "success", data: data}), 200
+        except:
+            return jsonify({'status': 'error', 'message': 'There was an issue fetching current locations data'}), 500
+    else:
+        return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
+    
 # get all current queue items
-@user_view.route('/', methods=['GET'])
-def current_queues():
+@user_view.route('/queues', methods=['GET'])
+def get_current_queues():
     if  request.method == 'GET': 
         try:
             queue_items = Queue_item.query.order_by(Queue_item.time_joined).all()
@@ -22,7 +67,7 @@ def current_queues():
         except Exception as e:
             # Print the exception to see what went wrong
             print(e)
-            return 'There was an issue fetching current queue_items data', 500
+            return jsonify({'status': 'error', 'message': 'There was an issue fetching current queue_items data'}), 500
     else:
         return 'hello world'
     
@@ -49,16 +94,3 @@ def join_the_queue():
     else: 
         return "hello world"
     
-
-'''
-@app.route('/delete/<int:queue_id>')
-def delete(queue_id):
-    to_delete = Queue_item.query.get_or_404(queue_id)
-
-    try:
-        db.session.delete(to_delete)
-        db.session.commit()
-        return redirect('/')
-    except:
-        return 'There was an issue when removing this data entry'
-'''

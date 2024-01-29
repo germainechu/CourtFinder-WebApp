@@ -8,7 +8,7 @@ In the project directory 'queup', you can run:
 
 ### `yarn start-api`
 
-Runs the flask application in development mode.\
+Runs the flask application in development mode.
 
 ### `yarn start` or `npm start`
 

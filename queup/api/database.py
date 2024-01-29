@@ -62,8 +62,8 @@ def initialize_court():
 def initialize_database():
     with app.app_context():
         # Drop tables if they exist
-        db.reflect()
-        db.drop_all()
+        # db.reflect()
+        # db.drop_all()
         
         db.create_all()
         # load the current tennis court locations
