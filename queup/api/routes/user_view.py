@@ -3,6 +3,7 @@ from database import db, Location, Court, Queue_item
 
 user_view = Blueprint('home_page', __name__)
 
+# get all current queue items
 @user_view.route('/', methods=['GET'])
 def current_queues():
     if  request.method == 'GET': 
