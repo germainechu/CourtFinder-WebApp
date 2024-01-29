@@ -1,7 +1,5 @@
-from flask import request, Response, redirect, jsonify, Blueprint
+from flask import request, jsonify, Blueprint
 from database import db, Location, Court, Queue_item
-
-import json
 
 user_view = Blueprint('home_page', __name__)
 
@@ -10,7 +8,6 @@ def current_queues():
     if  request.method == 'GET': 
         try:
             queue_items = Queue_item.query.order_by(Queue_item.time_joined).all()
-
             queue_items_dic = {}
             for item in queue_items:
                 queue_items_dic[item.queue_id] = {'court_id': item.court_id, 'time_joined': item.time_joined.strftime('%Y-%m-%d %H:%M:%S')}
