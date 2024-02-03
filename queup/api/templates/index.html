@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block head %}<title>Queue Manager</title> {%
+endblock %} {% block body %}
+<div class="content">
+  <h1>Curren Queue Overview</h1>
+  <table>
+    <tr>
+      <th>queue_item_id</th>
+      <th>court_id</th>
+      <th>time_joined</th>
+    </tr>
+    {% for queue_item in queue_items %}
+    <tr>
+      <td>{{queue_item.queue_id}}</td>
+      <td>{{queue_item.court_id}}</td>
+      <td>{{queue_item.time_joined.time()}}</td>
+      <td><a href="/delete/{{queue_item.queue_id}}">Delete</a></td>
+    </tr>
+    {% endfor%}
+  </table>
+  <br />
+  <h2>please input the number of court you want to queue for</h2>
+  <form action="/" method="post">
+    <label for="court_id"></label>
+    <input type="number" name="court_id" id="court_id" />
+    <input type="submit" value="Add me to the queue" />
+  </form>
+</div>
+
+{% endblock %}

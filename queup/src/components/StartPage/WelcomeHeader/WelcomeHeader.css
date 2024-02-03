@@ -1,0 +1,30 @@
+.WelcomeHeader {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+  }
+  .welcome-text {
+    color: #01d38c;
+    text-align: center;
+    align-self: center;
+    white-space: nowrap;
+    font: 700 27px/148% Heebo, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    justify-content: center;
+  }
+  .header-logo {
+    /* Assuming you want the image to be responsive and not exceed its natural size: */
+    display: flex; /* Use flexbox to center the image within this div */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: auto; /* Remove the height or set to auto so it doesn't stretch */
+    max-height: 100%; /* Make sure it doesn't exceed the viewport height */
+    width: 100%; /* Full width of the container */
+  }
+  
+  .header-logo img {
+    max-width: 100%; /* Max width of the image is 100% of its container */
+    height: auto; /* Height is auto so the image maintains its aspect ratio */
+    object-fit: contain; /* Ensures the image is fully visible, contained within its box */
+  }
