@@ -1,9 +1,10 @@
 import React from 'react'
+import './StartButton.css'
 
 const StartButton = () => {
   return (
     <div>
-      <p>StartButton component</p>
+        <button className="start-button">Next</button>
     </div>
   )
 }

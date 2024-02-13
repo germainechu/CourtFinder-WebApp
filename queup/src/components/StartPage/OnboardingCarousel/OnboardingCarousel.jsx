@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OnboardingCard = () => {
+const OnboardingCarousel = () => {
   return (
     <div>
       <p>Onboarding Card</p>
@@ -8,4 +8,4 @@ const OnboardingCard = () => {
   )
 }
 
-export default OnboardingCard
+export default OnboardingCarousel
