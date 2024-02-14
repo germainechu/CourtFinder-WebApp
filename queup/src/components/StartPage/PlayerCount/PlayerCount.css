@@ -4,6 +4,8 @@
     border-radius: 40vw; /* Rounded corners */
     padding: 8px;
     max-width: 228px;
+    justify-content: center;
+    align-items: center;
   }
   
   .player-count-button {
@@ -19,7 +21,7 @@
   }
   
   .player-count-button:hover {
-    background-color: #e0e0e0; /* Slightly darker on hover */
+    background-color: #abf0d9; /* Slightly darker on hover */
   }
   
   .player-count-button.active {
