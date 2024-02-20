@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./PlayerCount.css";
-import { Link } from "react-router-dom";
 // accept this passPlayerCount call as props, pass data to the function call in the event handler
 const PlayerCount = ({ passPlayerCount }) => {
   const [activeIndex, setActiveIndex] = useState();

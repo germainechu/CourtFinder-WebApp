@@ -3,10 +3,9 @@ import "./StartButton.css";
 import { Link } from "react-router-dom";
 
 const StartButton = (props) => {
-  // const [playerCount, setPlayerCount] = useState("");
-  const data = { playerCount: props.playerCount };
+  const testUsername = "TheQueupTeam";
   return (
-    <Link to={`/queue/${data.playerCount}`}>
+    <Link to={`/queue/${testUsername}/${props.playerCount}`}>
       <button className="start-button">Next</button>
     </Link>
   );
