@@ -48,7 +48,7 @@ def get_courts_in_location(location_id):
     else:
         return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
     
-@user_view.route('/queues', methods=['GET', 'POST'])
+@user_view.route('/queue', methods=['GET', 'POST'])
 def handle_queue():
     # get all current queue items
     if  request.method == 'GET': 
@@ -90,3 +90,5 @@ def handle_queue():
             return jsonify({'status': 'error', 'Message': 'There was an issue adding you to the queue, please try again'}), 500
     else: 
         return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
+    
+
