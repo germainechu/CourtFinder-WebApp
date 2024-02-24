@@ -1,4 +1,4 @@
-import MapView from "./MapView";
+import MapView from "./LocationMap/LocationMap";
 import { useParams } from "react-router-dom";
 
 const Homepage = (props) => {
