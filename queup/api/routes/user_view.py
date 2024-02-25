@@ -28,7 +28,11 @@ def get_all_locations():
             return jsonify({'status': 'error', 'message': 'There was an issue fetching current locations data'}), 500
     else:
         return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> frontend
 # get all courts with location id
 @user_view.route('/<int:location_id>', methods = ["GET", "POST"])
 def get_courts_in_location(location_id):
@@ -48,7 +52,7 @@ def get_courts_in_location(location_id):
     else:
         return jsonify({'status': 'error', 'message': 'Invalid request method'}), 400
     
-@user_view.route('/queues', methods=['GET', 'POST'])
+@user_view.route('/queue', methods=['GET', 'POST'])
 def handle_queue():
     # get all current queue items
     if  request.method == 'GET': 

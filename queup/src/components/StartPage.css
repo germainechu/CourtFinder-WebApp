@@ -1,0 +1,14 @@
+.start-page-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100%; /* Make sure it takes at least the full height of the viewport */
+  max-width: 100%;
+}
+
+.start-page-container > * {
+    /* < selector targets children of this container and recursively applies styles to them*/
+    margin-bottom: 20px
+}

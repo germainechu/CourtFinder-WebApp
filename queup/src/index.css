@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --green-colour: #01D38C;
+  --red-colour: #F56D50;
+  --dark-colour: #221F20;
+  --light-colour: #686868;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* This ensures that padding and border sizes are included in the total width and height of elements */
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3";
+}
+
+h2,h3 {
+  margin: 0;
+  font-family: "Montserrat";
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
