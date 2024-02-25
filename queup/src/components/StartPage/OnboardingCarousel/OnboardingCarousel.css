@@ -1,0 +1,70 @@
+.carousel-caption h3 {
+    font-size: medium;
+}
+
+.carousel-caption p {
+    font-size: small;
+}
+
+.carousel-caption-right {
+    text-align: right; /* Aligns text to the right */
+    padding-right: 20px; /* Adds space between the text and the box's right edge */
+    margin-left: auto; /* This will push the box to the right */
+    width: fit-content; /* The width of the box fits the content's width */
+    display: inline-block;
+    margin-right: 0;
+}
+
+.text-right-container {
+    width: 100%;
+}
+
+.carousel-item img {
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensures the image is fully visible */
+  }
+
+.carousel-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+}
+
+.carousel-item {
+    position:relative;
+    overflow:visible;
+}
+
+.overlay-person1-image {
+    position: absolute;
+    height:auto;
+    max-width: 150px;
+    rotate: 17deg;
+    top: 40%;   /* Adjust this value to position the image vertically */
+    left: 10%;  /* Adjust this value to position the image horizontally */
+    transform: translate(-50%, -50%); /* This centers the image */
+    z-index: 10; /* Ensure the image is above other elements */
+}
+
+.overlay-person2-image {
+    position: absolute;
+    width: 200px;
+    align-items: center;
+    left: 150px;
+    top: 100px;
+    transform: translate(-50%, -50%); /* This centers the image */
+    z-index: 10; /* Ensure the image is above other elements */
+}
+
+.overlay-person3-image {
+    position: absolute;
+    left: 170px;
+    top: 40px;
+    width: 200px;
+    rotate: -17deg;
+    max-width: 200px;
+    z-index: 10; /* Ensure the image is above other elements */
+}
+
+  
