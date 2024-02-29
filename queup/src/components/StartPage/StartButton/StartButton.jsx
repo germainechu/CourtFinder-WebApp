@@ -1,14 +1,22 @@
-import React from "react";
-import "./StartButton.css";
-import { Link } from "react-router-dom";
+// import React from "react";
+// import "./StartButton.css";
+// import { Link } from "react-router-dom";
 
-const StartButton = (props) => {
-  const username = "celine";
-  return (
-    <Link to={`/queue/${username}/${props.playerCount}`}>
-      <button className="start-button">Next</button>
-    </Link>
-  );
-};
+// const StartButton = (props) => {
+//   return (
+//     // <Link to={"/queue"}>
 
-export default StartButton;
+//     <button
+//       // form={props.form}
+//       // type="submit"
+//       className="start-button"
+//       // onSubmit={handleSubmit}
+//     >
+//       Next
+//     </button>
+
+//     // </Link>
+//   );
+// };
+
+// export default StartButton;

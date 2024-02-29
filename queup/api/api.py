@@ -1,17 +1,17 @@
 from routes.user_view import user_view
-from flask import Flask, send_from_directory, jsonify
+from flask import Flask, send_from_directory, jsonify, request
 import os
 
 app = Flask(__name__)
 # Register blueprints
 # app.register_blueprint(user_view)
 
-# Define a route to serve the index.html file
+# Define the routes to serve static files in the build directory
 @app.route('/')
 def serve_index():
     return send_from_directory(os.path.join('..', 'build'), 'index.html')
 
-# Define a route to serve files from the asset directory
+# serve the assets
 @app.route('/assets/<path:path>')
 def serve_asset(path):
     return send_from_directory(os.path.join('..', 'build', 'assets'), path)
@@ -25,22 +25,35 @@ def serve_js(filename):
 def serve_css(filename):
     return send_from_directory(os.path.join('..', 'build', 'static', 'css'), filename)
 
+# api 
 courtList = [{"id": 1, "occupied_by": "Celine", "duration": 60 },
   { "id": 2, "occupied_by": "Celine", "duration": 30 }]
-
-@app.route('/queue/<username>/<int:playerCount>', methods=['GET'])
+queues =[]
+@app.route('/api/courts', methods=['GET'])
 def get_courts():
     try:
         response_data = {
             'status': "success",
             'data': courtList
         }
-        return jsonify(response_data)
+        return jsonify(response_data), 200
         
     except Exception as e:
         # Print the exception to see what went wrong
         print(e)
-        return jsonify({'status': 'error', 'message': 'There was an issue fetching current locations data'}), 500
+        return jsonify({'status': 'error', 'message': 'There was an issue fetching court data'}), 500
 
+@app.route('/api/queues', methods=['POST'])
+def post_queue():
+    try: 
+        queue_item = request.json
+        queues.append(queue_item)
+        return jsonify({'status': 'success', 'message': 'Added you to the queue'}), 200
+    except Exception as e:
+        # Print the exception to see what went wrong
+        print(e)
+        return jsonify({'status': 'error', 'message': 'There was an issue adding you to the queue'}), 500
+    
+    
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)

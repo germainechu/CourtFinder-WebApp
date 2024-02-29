@@ -1,36 +1,58 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./StartPage.css";
 import WelcomeHeader from "./StartPage/WelcomeHeader/WelcomeHeader";
-import StartButton from "./StartPage/StartButton/StartButton";
 import PlayerCount from "./StartPage/PlayerCount/PlayerCount";
 import OnboardingCarousel from "./StartPage/OnboardingCarousel/OnboardingCarousel";
+import { Link } from "react-router-dom";
 
 const StartPage = () => {
-  //pass data from PlayerCount (child component) to the StartPage (parent component)
-  const [playerCount, setPlayerCount] = useState("");
   const [username, setUsername] = useState("");
-  const passPlayerCount = (playerCount) => {
-    setPlayerCount(playerCount);
+  const [playerNum, setPlayerNum] = useState(0);
+  localStorage.setItem("username", username);
+  localStorage.setItem("playerNum", playerNum);
+  const updatePlayerNum = (num) => {
+    setPlayerNum(num);
   };
-  const passUsername = (event) => {
-    console.log(event);
-    setUsername(event.target.userinput);
+  const handleChange = (event) => {
+    setUsername(event.target.value);
   };
-  // place useState and useEffect functions here to handle routing
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!username || !playerNum) {
+      alert("please fill in all fields");
+    } else {
+      alert("submission success");
+    }
+  };
   return (
     <div className="start-page-container">
       <WelcomeHeader></WelcomeHeader>
       <OnboardingCarousel></OnboardingCarousel>
-      <form action="" for="userinput" onSubmit={passUsername}>
-        <label>Please enter your name</label>
-        <input name="userinput" type="text" placeholder="username" />
+      <form id="username_form" type="submit" onSubmit={handleSubmit}>
+        <label htmlFor="name">Please enter your name</label>
+        <input
+          name="name"
+          type="text"
+          placeholder="username"
+          onChange={handleChange}
+          value={username}
+        />
       </form>
+      <PlayerCount
+        playerNum={playerNum}
+        updatePlayerNum={updatePlayerNum}
+      ></PlayerCount>
 
-      {/* pass the passPlayerCount function as a prop to the child component PlayerCount */}
-      <PlayerCount passPlayerCount={passPlayerCount}></PlayerCount>
-      {/* pass playerCount data to the StartButton is*/}
-      <StartButton playerCount={playerCount} username={username}></StartButton>
+      <Link to="/queue">
+        <button
+          form="username_form"
+          type="submit"
+          onSubmit={handleSubmit}
+          className="start-button"
+        >
+          NEXT
+        </button>
+      </Link>
     </div>
   );
 };

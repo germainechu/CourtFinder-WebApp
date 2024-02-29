@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./PlayerCount.css";
-// accept this passPlayerCount call as props, pass data to the function call in the event handler
-const PlayerCount = ({ passPlayerCount }) => {
+const PlayerCount = (props) => {
   const [activeIndex, setActiveIndex] = useState();
+
+  // update the player num with the number selected by the client
   const handleClick = (index) => {
     setActiveIndex(index);
-    passPlayerCount(index + 1);
+    console.log("index", index);
+    props.updatePlayerNum(index + 1);
   };
   return (
     <div className="player-count-container">

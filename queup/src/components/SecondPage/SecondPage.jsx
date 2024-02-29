@@ -1,39 +1,58 @@
 import MapView from "./LocationMap/LocationMap";
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const SecondPage = () => {
-  const { username, playerCount } = useParams();
-  console.log(useParams);
+const SecondPage = (props) => {
   const [courts, setCourts] = useState([]);
+  const username = localStorage.getItem("username");
+  const playerNum = localStorage.getItem("playerNum");
   useEffect(() => {
     const fetchCourts = async () => {
       try {
-        // `/api/users/${userId}
-
-        const results = await fetch(`/queue/${username}/${playerCount}`, {
+        const response = await fetch(`/api/courts`, {
           method: "GET",
           headers: {
             Accept: "application/json",
           },
         });
-        const jsonResutl = results.json();
-        console.log("print the response", jsonResutl);
-        setCourts(jsonResutl);
+        const jsonResult = await response.json();
+        setCourts(jsonResult.data);
       } catch (err) {
         console.log(err);
       }
     };
     fetchCourts();
   }, []);
-  console.log("print the result", courts);
+
+  const addToQueue = async () => {
+    const queue_item = {
+      username: username,
+      playerNum: playerNum,
+    };
+    try {
+      const response = await fetch("/api/queues", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(queue_item),
+      });
+
+      const result = await response.json();
+      console.log("Success:", result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  console.log(props);
+  // console.log("print the result", courts);
   return (
-    <>
-      <h2>
-        Hello {username}, you are a Group of {playerCount}.
-      </h2>
+    <div>
+      <h1>
+        Hello {username}, you are a group of {playerNum}
+      </h1>
+      <button onClick={addToQueue}>Queup</button>
       <MapView />
-    </>
+    </div>
   );
 };
 export default SecondPage;

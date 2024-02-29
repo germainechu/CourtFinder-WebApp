@@ -1,4 +1,4 @@
-.start-page-container{
+.start-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,16 @@
 }
 
 .start-page-container > * {
-    /* < selector targets children of this container and recursively applies styles to them*/
-    margin-bottom: 20px
+  /* < selector targets children of this container and recursively applies styles to them*/
+  margin-bottom: 20px;
+}
+
+.start-button {
+  background-color: #01d38c; /*--green-colour*/
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
 }
