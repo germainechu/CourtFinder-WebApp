@@ -1,0 +1,22 @@
+.map-container {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+.map-bob {
+    height: 100%;
+    width: 90%;
+   
+  }
+
+.mapboxgl-ctrl {
+display: none;
+  }
+
+.mapboxgl-ctrl-attrib {
+display: none;
+}
+
+  
+  

@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "./StartPage.css";
-import WelcomeHeader from "./StartPage/WelcomeHeader/WelcomeHeader";
-import StartButton from "./StartPage/StartButton/StartButton";
-import PlayerCount from "./StartPage/PlayerCount/PlayerCount";
-import OnboardingCarousel from "./StartPage/OnboardingCarousel/OnboardingCarousel";
+import WelcomeHeader from "./WelcomeHeader/WelcomeHeader";
+import StartButton from "./StartButton/StartButton";
+import PlayerCount from "./PlayerCount/PlayerCount";
+import OnboardingCarousel from "./OnboardingCarousel/OnboardingCarousel";
 
 const StartPage = () => {
   //pass data from PlayerCount (child component) to the StartPage (parent component)
