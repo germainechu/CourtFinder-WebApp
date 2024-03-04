@@ -1,33 +1,31 @@
-import React from 'react'
-import { useRef, useEffect, useState} from 'react';
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import './LocationMap.css';
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VybWFpbmVjIiwiYSI6ImNsc3NheDlqcTFseXQya211czN1MGoyZWUifQ._5a858W_iGnnbdUuD0lYsA';
+import React, { useState } from "react";
+import "./LocationMap.css";
+import CourtFrameQE from "./CourtFrame/CourtFrameQE";
 
 const LocationMap = () => {
-  const mapContainer = useRef(null);
-  console.log(mapContainer);
-  const map = useRef(null);
-  const [lng, setLng] = useState(123.1207);
-  const [lat, setLat] = useState(49.2827);
-  const [zoom, setZoom] = useState(8);
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [lng, lat],
-      zoom: zoom
-    });
-    
-  });
-  
+  //TODO: add switching for different elements based on route
+  // const locationIDToRender = locations.find((location) => location.id === locationID).id
+  // switch (locationIDToRender):
+  //  case 'qe':
+  //        return <LocationMap-QE />
+
+  //TODO: use a for each through the CourtArray to check if any have "available" status. if so, continue showing the court number drop down.
+
+  const [selectButtonID, setSelectButtonID] = useState(null);
+  const toggleColor = (courtID) => {
+    setSelectButtonID((prevCourtID) => (prevCourtID === courtID ? null : courtID));
+  };
+
   return (
-    <div className="map-container">
-      <div ref={mapContainer} className="map-bob" />
+    <div className="map-frame">
+      <div className="map-background">
+        <p>Looks like there are courts available. Please select which court you will play on today!</p>
+        <CourtFrameQE selectButtonID={selectButtonID} toggleColor={toggleColor}></CourtFrameQE>
+        <p>You've Selected: Court {selectButtonID+1}</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LocationMap
+export default LocationMap;

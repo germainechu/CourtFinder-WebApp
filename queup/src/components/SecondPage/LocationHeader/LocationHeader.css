@@ -1,0 +1,24 @@
+.location-header {
+    background-color: var(--green-colour); 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px; 
+    display: flex;
+    align-items: flex-start; 
+    justify-content: left; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 100px; /* TODO: this should be auto */
+    font-family: "Montserrat", sans-serif;
+    flex-direction: column;
+  }
+  .location-name, .star-rating {
+    align-self: center; 
+    width: 100%;
+    text-align: left; 
+  }
+  .location-name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  

@@ -6,7 +6,7 @@
   }
   
   .welcome-text {
-    color: #01d38c;
+    color: var(--green-colour);
     text-align: center;
     align-self: center;
     white-space: nowrap;

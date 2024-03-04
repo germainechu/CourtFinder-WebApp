@@ -1,22 +1,52 @@
-.map-container {
-    width: 100vw;
-    height: 50vh;
+.map-frame {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-}
-.map-bob {
-    height: 100%;
-    width: 90%;
-   
+    align-items: center;
+    gap: 30px;
+    width: 100%; /* Set the width or use a specific size */
+    height: 400px; /* Set the height or use a specific size */
+    position: relative;
+    background-size:cover;
+    background-position: center;
+    background-repeat: repeat;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-
-.mapboxgl-ctrl {
-display: none;
-  }
-
-.mapboxgl-ctrl-attrib {
-display: none;
-}
-
   
+  .map-background{
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start to stick them together */
+    justify-content: center;
+    box-sizing: border-box;
+    padding-left: 30px;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+  }
+
+  .court-wrapper {
+    display: flex;
+    flex-direction: column; /* Use column or row depending on the layout */
+    align-items: flex-start; /* Align items to the start to stick them together */
+    gap: 0; /* No gap between the court frames */
+    padding: 10px; /* Padding inside the wrapper */
+    border: 2px solid #A4E9D2; /* Border around the wrapper */
+    background-color: #A4E9D2;
+    box-sizing: border-box;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+  }
+
+  p {
+    width: 400px;
+    text-wrap: wrap;
+  }
+
+  .tennis-court-frame {
+    width: 100px; /* Let the width be determined by content */
+  }
   

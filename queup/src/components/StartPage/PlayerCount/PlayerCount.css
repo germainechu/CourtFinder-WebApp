@@ -25,7 +25,7 @@
   }
   
   .player-count-button.active {
-    background-color: #01D38C; /* Active color */
+    background-color: var(--green-colour); /* Active color */
     color: #fff; /* White text on active button */
   }
   

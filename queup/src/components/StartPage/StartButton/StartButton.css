@@ -1,5 +1,5 @@
 .start-button {
-    background-color: #01D38C; /*--green-colour*/
+    background-color: var(--green-colour); /*--green-colour*/
     color: white;
     border: none;
     padding: 15px 30px;
