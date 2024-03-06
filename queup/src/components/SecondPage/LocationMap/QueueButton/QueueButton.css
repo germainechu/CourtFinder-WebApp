@@ -1,0 +1,22 @@
+.queue-button {
+    background-color: var(--green-colour); /* The green background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular shape */
+    width: 130px; /* Width of the button */
+    height: 130px; /* Height of the button */
+    font-size: 3.3rem; /* Adjust the font size as needed */
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* horizontal-offset vertical-offset blur-radius color */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 -3px 5px rgba(0, 0, 0, 0.2), inset 0 3px 5px rgba(255, 255, 255, 0.7);
+}
+
+.queue-button:hover {
+  transform: scale(1.08);
+  transition: 0.01ms;
+  background-color: orange;
+}

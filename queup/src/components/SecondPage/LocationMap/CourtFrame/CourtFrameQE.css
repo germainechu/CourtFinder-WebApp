@@ -35,11 +35,18 @@
     font-family: "Monserrat", sans-serif;
     color: white;
     font-size: small;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   }
 
   .court-button--rotated {
     height: 60px; 
     width: 28px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .court-button:hover, .court-button--rotated:hover {
+    transition: 0.01ms;
+    transform: scale(1.05);
   }
   
   /* Remove margin from the last button */

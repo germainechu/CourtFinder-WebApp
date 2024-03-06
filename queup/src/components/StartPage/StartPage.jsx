@@ -18,6 +18,7 @@ const StartPage = () => {
     <div className="start-page-container">
       <WelcomeHeader></WelcomeHeader>
       <OnboardingCarousel></OnboardingCarousel>
+      <input className="input"></input>
       {/* pass the passPlayerCount function as a prop to the child component PlayerCount */}
       <PlayerCount passPlayerCount={passPlayerCount}></PlayerCount>
       {/* pass playerCount data to the StartButton is*/}
