@@ -17,4 +17,4 @@ const QueueButton = () => {
   )
 }
 
-export default QueueButton
+export default QueueButton;

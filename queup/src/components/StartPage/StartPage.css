@@ -12,3 +12,9 @@
     /* < selector targets children of this container and recursively applies styles to them*/
     margin-bottom: 20px
 }
+
+.input {
+  width: 200px;
+  height: 30px;
+  
+}

@@ -3,8 +3,14 @@
     color: white;
     border: none;
     padding: 15px 30px;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 16px;
     cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(11, 86, 17, 0.3); 
+ 
   }
   
+  .start-button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.01ms;
+  }

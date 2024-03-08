@@ -1,8 +1,8 @@
 import React from 'react';
-import './CourtFrameQE.css';
+import './QECourtFrame.css';
 import generateCourtArray from '../../../../utils/generateCourtArray';
 
-const CourtFrameQE = ({selectButtonID, toggleColor}) => {
+const QECourtFrame = ({selectButtonID, toggleColor}) => {
     const courtArray = generateCourtArray(16)
     
   return (
@@ -21,4 +21,4 @@ const CourtFrameQE = ({selectButtonID, toggleColor}) => {
   );
 };
 
-export default CourtFrameQE;
+export default QECourtFrame;

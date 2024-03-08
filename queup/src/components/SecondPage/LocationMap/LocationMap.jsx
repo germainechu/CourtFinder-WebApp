@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./LocationMap.css";
-import CourtFrameQE from "./CourtFrame/CourtFrameQE";
-import CourtFrameSP2 from "./CourtFrame/CourtFrameSP2";
+import QECourtFrame from "./CourtFrame/QECourtFrame";
 import QueueButton from "./QueueButton/QueueButton";
 
 const LocationMap = () => {
@@ -30,7 +29,7 @@ const LocationMap = () => {
         <div className="location-frame--background">
           <div className="location-frame--container">
             <div className="location-frame--map">
-              <CourtFrameQE selectButtonID={selectButtonID} toggleColor={toggleColor}></CourtFrameQE>
+              <QECourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}></QECourtFrame>
               {/* <CourtFrameSP2
                 selectButtonID={selectButtonID}
                 toggleColor={toggleColor}

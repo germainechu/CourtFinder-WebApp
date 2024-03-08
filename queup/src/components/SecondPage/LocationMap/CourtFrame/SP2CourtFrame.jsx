@@ -1,8 +1,8 @@
 import React from 'react';
-import "./CourtFrameSP2.css";
+import "./SP2CourtFrame.css";
 import generateCourtArray from '../../../../utils/generateCourtArray';
 
-const CourtFrameSP2 = ({selectButtonID, toggleColor}) => {
+const SP2CourtFrame = ({selectButtonID, toggleColor}) => {
   const courtArray = generateCourtArray(4)
 
   return (
@@ -16,4 +16,4 @@ const CourtFrameSP2 = ({selectButtonID, toggleColor}) => {
   )
 }
 
-export default CourtFrameSP2;
+export default SP2CourtFrame;
