@@ -19,8 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/bin/flask run",
-    "build": "react-scripts build && mv build /api",
-    "build": "BUILD_PATH='./dist' react-scripts build",
+    "build": "BUILD_PATH='./api/build' react-scripts build",
     "test": "react-scripts test",
     "test-api": "cd api && env/bin/flask test",
     "eject": "react-scripts eject"

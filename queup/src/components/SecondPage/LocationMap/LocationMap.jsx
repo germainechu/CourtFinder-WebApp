@@ -29,7 +29,10 @@ const LocationMap = () => {
         <div className="location-frame--background">
           <div className="location-frame--container">
             <div className="location-frame--map">
-              <QECourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}></QECourtFrame>
+              <QECourtFrame
+                selectButtonID={selectButtonID}
+                toggleColor={toggleColor}
+              ></QECourtFrame>
               {/* <CourtFrameSP2
                 selectButtonID={selectButtonID}
                 toggleColor={toggleColor}
@@ -43,7 +46,6 @@ const LocationMap = () => {
             )}
           </div>
         </div>
-        <QueueButton className="queue-button"></QueueButton>
       </div>
     </>
   );

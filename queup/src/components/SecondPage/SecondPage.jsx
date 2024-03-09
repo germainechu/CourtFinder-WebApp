@@ -1,6 +1,8 @@
-import MapView from "./LocationMap/LocationMap";
+import LocationMap from "./LocationMap/LocationMap";
 import { useEffect, useState } from "react";
-
+import LocationHeader from "./LocationHeader/LocationHeader";
+import QueueButton from "./LocationMap/QueueButton/QueueButton";
+import "./SecondPage.css";
 const SecondPage = ({ username, playerNum }) => {
   const [courts, setCourts] = useState([]);
   useEffect(() => {
@@ -44,11 +46,18 @@ const SecondPage = ({ username, playerNum }) => {
 
   return (
     <div>
-      <h1>
-        Hello {username}, you are a group of {playerNum}
-      </h1>
-      <button onClick={addToQueue}>Queup</button>
-      <MapView />
+      <LocationHeader
+        locationName={"Queen Elizabeth Park"}
+        rating={4}
+      ></LocationHeader>
+      {/* <button onClick={addToQueue}>Queup</button> */}
+      <div className="second-page__main">
+        <LocationMap />
+        <QueueButton
+          className="queue-button"
+          addToQueue={addToQueue}
+        ></QueueButton>
+      </div>
     </div>
   );
 };
