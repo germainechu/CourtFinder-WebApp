@@ -9,10 +9,12 @@ app = Flask(__name__)
 # Register blueprints
 # app.register_blueprint(user_view)
 
-# Define the routes to serve static files in the build directory
-@app.route('/')
-def serve_index():
-    return send_from_directory(os.path.join('build'), 'index.html')
+# server index.html for the root route and root routes with params 
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_index(path):
+    print(path)
+    return send_from_directory('build', 'index.html')
 
 # serve the assets
 @app.route('/assets/<path:path>')
@@ -23,6 +25,7 @@ def serve_asset(path):
 @app.route('/static/js/<path:filename>')
 def serve_js(filename):
     return send_from_directory(os.path.join('build', 'static', 'js'), filename)
+
 # serve css files
 @app.route('/static/css/<path:filename>')
 def serve_css(filename):
