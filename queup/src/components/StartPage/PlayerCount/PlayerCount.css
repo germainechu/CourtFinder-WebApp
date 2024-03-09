@@ -6,6 +6,7 @@
     max-width: 228px;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   }
   
   .player-count-button {
@@ -17,15 +18,19 @@
     border-radius: 50%; /* Make it a circle */
     margin: 0 5px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect and transform */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
   }
   
   .player-count-button:hover {
-    background-color: #abf0d9; /* Slightly darker on hover */
+    background-color: white;
+    transform: scale(1.1); /* Enlarge the button */
   }
   
   .player-count-button.active {
-    background-color: #01D38C; /* Active color */
+    background-color: var(--green-colour); /* Active color */
     color: #fff; /* White text on active button */
+    transform: scale(1.1);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1); 
   }
   
