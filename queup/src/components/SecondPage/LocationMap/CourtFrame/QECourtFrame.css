@@ -1,5 +1,5 @@
 
-.court-frame--top {
+.QE-court-frame--top {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -12,7 +12,7 @@
     border-radius: 10px 10px 0 0;
   }
   
-  .court-frame--bottom {
+  .QE-court-frame--bottom {
     display: flex;
     flex-direction: row;
     width: fit-content;

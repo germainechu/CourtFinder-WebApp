@@ -4,6 +4,19 @@
   align-items: center; /* This will center the children (map-frame and QueueButton) horizontally */
 }
 
+.location-frame--map{
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start to stick them together */
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: 400px;
+  height: 370px;
+  border-radius: 10px;
+}
+
 .location-frame--background {
     display: flex;
     flex-direction: row;
@@ -39,18 +52,7 @@
     font-family: "Montserrat", sans-serif;
   }
   
-  .location-frame--map{
-    background-color: #F4F4F4;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the start to stick them together */
-    justify-content: center;
-    box-sizing: border-box;
-    padding-left: 30px;
-    width: 400px;
-    height: 370px;
-    border-radius: 10px;
-  }
+ 
 
   .court-wrapper {
     display: flex;

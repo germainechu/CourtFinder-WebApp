@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./LocationMap.css";
 import QECourtFrame from "./CourtFrame/QECourtFrame";
-import QueueButton from "./QueueButton/QueueButton";
 import SP2CourtFrame from "./CourtFrame/SP2CourtFrame";
 import SP1CourtFrame from "./CourtFrame/SP1CourtFrame";
 import KTCourtFrame from "./CourtFrame/KTCourtFrame";
@@ -12,7 +11,7 @@ const LocationMap = () => {
   // const locationIDToRender = locations.find((location) => location.id === locationID).id
   // TODO: when locationID is undefined, return empty page
   const { locationID } = useParams();
-  console.log(locationID);
+
   const selectLocationToRender = (locationID) => {
     if (!locationID) {
       return (
@@ -34,13 +33,13 @@ const LocationMap = () => {
     }
     switch (locationID) {
       case "queen-elizabeth":
-        return <QECourtFrame />;
+        return <QECourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} />;
       case "stanley-park-1":
-        return <SP1CourtFrame />;
+        return <SP1CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
       case "stanley-park-2":
-        return <SP2CourtFrame />;
+        return <SP2CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
       case "kits":
-        return <KTCourtFrame />;
+        return <KTCourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
       default:
         console.log("wrong path");
     }

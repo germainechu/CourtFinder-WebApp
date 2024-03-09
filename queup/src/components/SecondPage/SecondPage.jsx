@@ -3,8 +3,17 @@ import { useEffect, useState } from "react";
 import LocationHeader from "./LocationHeader/LocationHeader";
 import QueueButton from "./LocationMap/QueueButton/QueueButton";
 import "./SecondPage.css";
+import { useParams } from "react-router-dom";
+
 const SecondPage = ({ username, playerNum }) => {
   const [courts, setCourts] = useState([]);
+  const { locationID } = useParams();
+  console.log(locationID);
+  const locationDict = {"queen-elizabeth":"Queen Elizabeth Park", 
+                        "stanley-park-1": "Stanley Park (Main Courts)",
+                        "stanley-park-2": "Stanley Park (Beaver Lake)",
+                        "kits": "Kitsilano Beach Park"}
+
   useEffect(() => {
     const fetchCourts = async () => {
       try {
@@ -44,13 +53,14 @@ const SecondPage = ({ username, playerNum }) => {
     }
   };
 
+  //TODO: need to pass rating from API
   return (
     <div>
       <LocationHeader
-        locationName={"Queen Elizabeth Park"}
+        locationName={locationDict[locationID]}
         rating={4}
       ></LocationHeader>
-      {/* <button onClick={addToQueue}>Queup</button> */}
+   
       <div className="second-page__main">
         <LocationMap />
         <QueueButton
