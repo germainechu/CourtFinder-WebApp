@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./StartPage.css";
-import WelcomeHeader from "./StartPage/WelcomeHeader/WelcomeHeader";
-import PlayerCount from "./StartPage/PlayerCount/PlayerCount";
-import OnboardingCarousel from "./StartPage/OnboardingCarousel/OnboardingCarousel";
+import WelcomeHeader from "./WelcomeHeader/WelcomeHeader";
+import PlayerCount from "./PlayerCount/PlayerCount";
+import OnboardingCarousel from "./OnboardingCarousel/OnboardingCarousel";
 import { useNavigate } from "react-router-dom";
 
 const StartPage = ({

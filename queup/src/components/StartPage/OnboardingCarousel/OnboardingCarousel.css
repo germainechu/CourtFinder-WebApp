@@ -1,70 +1,116 @@
-.carousel-caption h3 {
-    font-size: medium;
-}
-
-.carousel-caption p {
-    font-size: small;
-}
-
-.carousel-caption-right {
-    text-align: right; /* Aligns text to the right */
-    padding-right: 20px; /* Adds space between the text and the box's right edge */
-    margin-left: auto; /* This will push the box to the right */
-    width: fit-content; /* The width of the box fits the content's width */
-    display: inline-block;
-    margin-right: 0;
-}
-
-.text-right-container {
-    width: 100%;
-}
-
-.carousel-item img {
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensures the image is fully visible */
-  }
-
 .carousel-container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min-content;
 }
 
-.carousel-item {
-    position:relative;
-    overflow:visible;
+/* CARD 1 STYLING */
+.carousel-item-container--one {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  height: 410px; /* Fill the height of the parent container */
+  width: 344px;
+  background-image: url("../../../../public/assets/onboarding-background.png");
+  background-size: cover;
 }
 
 .overlay-person1-image {
-    position: absolute;
-    height:auto;
-    max-width: 150px;
-    rotate: 17deg;
-    top: 40%;   /* Adjust this value to position the image vertically */
-    left: 10%;  /* Adjust this value to position the image horizontally */
-    transform: translate(-50%, -50%); /* This centers the image */
-    z-index: 10; /* Ensure the image is above other elements */
+  height: auto;
+  max-width: 230px;
+  top: 160px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.carousel-container-caption--one {
+  display: inline-block;
+  padding-left: 150px; /* Add padding to the right */
+}
+
+.carousel-container-caption--h3 {
+  display: flex;
+  font-size: large;
+  text-align: left;
+  z-index: 10;
+  width: 60px;
+}
+
+.carousel-container-caption--p {
+  display: flex;
+  font-size: small;
+  text-align: left;
+  z-index: 10;
+  width: 120px;
+}
+
+/* CARD 2 STYLING */
+.carousel-item-container--two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 410px; /* Fill the height of the parent container */
+  width: 344px;
+  background-image: url("../../../../public/assets/onboarding-background.png");
+  background-size: cover;
 }
 
 .overlay-person2-image {
-    position: absolute;
-    width: 200px;
-    align-items: center;
-    left: 150px;
-    top: 100px;
-    transform: translate(-50%, -50%); /* This centers the image */
-    z-index: 10; /* Ensure the image is above other elements */
+  width: 300px;
+  rotate: -5deg;
 }
 
-.overlay-person3-image {
-    position: absolute;
-    left: 170px;
-    top: 40px;
-    width: 200px;
-    rotate: -17deg;
-    max-width: 200px;
-    z-index: 10; /* Ensure the image is above other elements */
+.carousel-container-caption--two {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  left: 0;
 }
 
-  
+.carousel-container-caption--two.carousel-caption {
+  padding: 0px;
+  left: 0;
+  position: relative;
+}
+
+.carousel-container-caption--h3wide {
+  display: flex;
+  font-size: large;
+  text-align: center;
+  padding: 0;
+}
+
+.carousel-container-caption--pwide {
+  display: flex;
+  font-size: small;
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+}
+
+/* CARD 3 STYLING */
+
+.carousel-item-container--three {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  height: 410px; /* Fill the height of the parent container */
+  width: 344px;
+  background-image: url("../../../../public/assets/onboarding-background.png");
+  background-size: cover;
+}
+
+.carousel-container-caption--three {
+}
+
+.overlay-person3-1-image {
+  position: absolute;
+  left: 140px;
+  top: 60px;
+  width: 240px;
+  rotate: -20deg;
+}

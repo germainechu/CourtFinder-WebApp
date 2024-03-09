@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 
 const SecondPage = ({ username, playerNum }) => {
   const [courts, setCourts] = useState([]);
-  // const username = localStorage.getItem("username");
-  // const playerNum = localStorage.getItem("playerNum");
   useEffect(() => {
     const fetchCourts = async () => {
       try {

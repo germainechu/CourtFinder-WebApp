@@ -13,12 +13,14 @@
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
+    "mapbox-gl": "^3.1.0",
     "yarn": "^1.22.21"
   },
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/bin/flask run",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build /api",
+    "build": "BUILD_PATH='./dist' react-scripts build",
     "test": "react-scripts test",
     "test-api": "cd api && env/bin/flask test",
     "eject": "react-scripts eject"

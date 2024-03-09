@@ -12,21 +12,21 @@ app = Flask(__name__)
 # Define the routes to serve static files in the build directory
 @app.route('/')
 def serve_index():
-    return send_from_directory(os.path.join('..', 'build'), 'index.html')
+    return send_from_directory(os.path.join('build'), 'index.html')
 
 # serve the assets
 @app.route('/assets/<path:path>')
 def serve_asset(path):
-    return send_from_directory(os.path.join('..', 'build', 'assets'), path)
+    return send_from_directory(os.path.join('build', 'assets'), path)
 
 # serve js files
 @app.route('/static/js/<path:filename>')
 def serve_js(filename):
-    return send_from_directory(os.path.join('..', 'build', 'static', 'js'), filename)
+    return send_from_directory(os.path.join('build', 'static', 'js'), filename)
 # serve css files
 @app.route('/static/css/<path:filename>')
 def serve_css(filename):
-    return send_from_directory(os.path.join('..', 'build', 'static', 'css'), filename)
+    return send_from_directory(os.path.join('build', 'static', 'css'), filename)
 
 # data 
 head = None
