@@ -8,4 +8,4 @@ const SP1CourtFrame = () => {
   )
 }
 
-export default SP1CourtFrame
+export default SP1CourtFrame;
