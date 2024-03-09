@@ -3,25 +3,27 @@ import "./StartPage.css";
 import WelcomeHeader from "./StartPage/WelcomeHeader/WelcomeHeader";
 import PlayerCount from "./StartPage/PlayerCount/PlayerCount";
 import OnboardingCarousel from "./StartPage/OnboardingCarousel/OnboardingCarousel";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const StartPage = () => {
-  const [username, setUsername] = useState("");
-  const [playerNum, setPlayerNum] = useState(0);
-  localStorage.setItem("username", username);
-  localStorage.setItem("playerNum", playerNum);
-  const updatePlayerNum = (num) => {
-    setPlayerNum(num);
-  };
+const StartPage = ({
+  username,
+  playerNum,
+  updatePlayerNum,
+  updateUsername,
+}) => {
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
-    setUsername(event.target.value);
+    updateUsername(event.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!username || !playerNum) {
       alert("please fill in all fields");
     } else {
-      alert("submission success");
+      // localStorage.setItem("username", username);
+      // localStorage.setItem("playerNum", playerNum);
+      navigate("/queue");
     }
   };
   return (
@@ -42,17 +44,14 @@ const StartPage = () => {
         playerNum={playerNum}
         updatePlayerNum={updatePlayerNum}
       ></PlayerCount>
-
-      <Link to="/queue">
-        <button
-          form="username_form"
-          type="submit"
-          onSubmit={handleSubmit}
-          className="start-button"
-        >
-          NEXT
-        </button>
-      </Link>
+      <button
+        form="username_form"
+        type="submit"
+        onSubmit={handleSubmit}
+        className="start-button"
+      >
+        NEXT
+      </button>
     </div>
   );
 };

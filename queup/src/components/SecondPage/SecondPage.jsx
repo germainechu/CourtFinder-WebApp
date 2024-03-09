@@ -1,10 +1,10 @@
 import MapView from "./LocationMap/LocationMap";
 import { useEffect, useState } from "react";
 
-const SecondPage = (props) => {
+const SecondPage = ({ username, playerNum }) => {
   const [courts, setCourts] = useState([]);
-  const username = localStorage.getItem("username");
-  const playerNum = localStorage.getItem("playerNum");
+  // const username = localStorage.getItem("username");
+  // const playerNum = localStorage.getItem("playerNum");
   useEffect(() => {
     const fetchCourts = async () => {
       try {
@@ -43,8 +43,7 @@ const SecondPage = (props) => {
       console.error("Error:", error);
     }
   };
-  console.log(props);
-  // console.log("print the result", courts);
+
   return (
     <div>
       <h1>

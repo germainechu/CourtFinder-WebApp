@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./PlayerCount.css";
-const PlayerCount = (props) => {
+const PlayerCount = ({ updatePlayerNum }) => {
   const [activeIndex, setActiveIndex] = useState();
 
   // update the player num with the number selected by the client
   const handleClick = (index) => {
     setActiveIndex(index);
     console.log("index", index);
-    props.updatePlayerNum(index + 1);
+    updatePlayerNum(index + 1);
   };
   return (
     <div className="player-count-container">
