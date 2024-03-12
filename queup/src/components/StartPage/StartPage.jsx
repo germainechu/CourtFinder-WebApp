@@ -38,11 +38,12 @@ const StartPage = ({
         <WelcomeHeader></WelcomeHeader>
         <OnboardingCarousel></OnboardingCarousel>
         <form id="username_form" type="submit" onSubmit={handleSubmit}>
-          <label htmlFor="name">Please enter your name</label>
+          <label htmlFor="name"></label>
           <input
+          className="input-field"
             name="name"
             type="text"
-            placeholder="username"
+            placeholder="First Name"
             onChange={handleChange}
             value={username}
           />
