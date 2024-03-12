@@ -5,8 +5,8 @@
     flex-wrap: wrap;
     box-sizing: content-box;
     width: 140px;
-    padding: 20px 10px 20px 20px;
-    gap: 5px;
+    padding: 20px 20px 20px 20px;
+    gap: 15px;
     border: 1px rgb(211, 124, 124);
     background-color: rgba(1,211,140,0.33);
     border-radius: 10px 10px 0 0;
@@ -20,7 +20,7 @@
     justify-content: flex-start;
     border: 1px white;
     padding: 20px;
-    gap: 5px;
+    gap: 13px;
     background-color: rgba(1,211,140,0.33);
     border-radius: 0 10px 10px 10px;
   }

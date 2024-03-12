@@ -3,10 +3,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: content-box;
-  width: 120px;
+  width: 170px;
   padding: 20px 20px 20px 20px;
   align-items: center;
-  gap: 10px;
+  gap: 35px;
   border: 1px rgb(211, 124, 124);
   background-color: rgba(1, 211, 140, 0.33);
   border-radius: 10px 10px 0 0;
@@ -17,10 +17,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: content-box;
-  width: 150px;
+  width: 230px;
   padding: 20px 20px 20px 20px;
   align-items: center;
-  gap: 10px;
+  gap: 35px;
   border: 1px rgb(211, 124, 124);
   background-color: rgba(1, 211, 140, 0.33);
   border-radius: 0 10px 0 0;
@@ -31,10 +31,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: content-box;
-  width: 180px;
+  width: 290px;
   padding: 20px 20px 20px 20px;
   align-items: center;
-  gap: 10px;
+  gap: 35px;
   border: 1px rgb(211, 124, 124);
   background-color: rgba(1, 211, 140, 0.33);
   border-radius: 0 10px 10px 10px;
@@ -54,7 +54,7 @@
 
 .court-button--rotated {
   height: 60px;
-  width: 28px;
+  width: 30px;
 }
 
 .court-button:hover,

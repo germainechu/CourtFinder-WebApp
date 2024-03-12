@@ -1,16 +1,16 @@
 
 .SP2-court-frame--top {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-sizing: content-box;
-    width: 270px;
-    padding: 30px 40px 30px 40px;
-    align-items: center;
-    gap: 10px;
-    border: 1px rgb(211, 124, 124);
-    background-color: rgba(1,211,140,0.33);
-    border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  width: 280px;
+  padding: 30px 30px 30px 30px;
+  align-items: center;
+  gap: 13.3px;
+  border: 1px rgb(211, 124, 124);
+  background-color: rgba(1, 211, 140, 0.33);
+  border-radius: 10px 10px 10px 10px;
   }
 
   .court-button {
