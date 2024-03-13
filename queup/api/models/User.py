@@ -6,8 +6,11 @@ class User:
         self.playerNum = playerNum
         self.joined_at = datetime.now()
 
-    def getUsers(self):
-        return self.users
-
-    def getUserPosition(self, name):
-        return self.users.index(name)
+    def getUsername(self):
+        return self.username
+    
+    def getGroupSize(self):
+        return self.playerNum
+    
+    # a user doesn't need to know which court they are playing on
+    # but a court should know which user is occupying the court
