@@ -1,6 +1,7 @@
 import React from "react";
 import generateCourtArray from "../../../../utils/generateCourtArray";
 import "./KTCourtFrame.css";
+
 const KTCourtFrame = ({ selectButtonID, toggleColor }) => {
   const MAX_COURTS = 11;
   const courtArray = generateCourtArray(MAX_COURTS);

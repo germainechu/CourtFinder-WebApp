@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 10px 8px 35px rgba(2, 25, 14, 0.5); /* horizontal-offset vertical-offset blur-radius color */
-    box-shadow: 0 8px 35px rgba(20, 98, 37, 0.5), inset 0 -3px 5px rgba(13, 43, 11, 0.2), inset 0 3px 5px rgba(255, 255, 255, 0.8);
+    box-shadow: 3px 3px 35px rgba(2, 252, 56, 0.5), inset 0 -3px 5px rgba(119, 255, 109, 0.2), inset 0 3px 5px rgba(255, 255, 255, 0.8);
 }
 
 .queue-button:hover {

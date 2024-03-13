@@ -10,11 +10,13 @@
     height: 100px; /* TODO: this should be auto */
     font-family: "Montserrat", sans-serif;
     flex-direction: column;
+    padding-top:30px;
   }
-  .location-name, .star-rating {
+  .location-name {
     align-self: center; 
     width: 100%;
     text-align: left; 
+    text-wrap: wrap;
   }
   .location-name {
     margin: 0;

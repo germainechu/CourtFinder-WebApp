@@ -16,6 +16,7 @@ code {
   --red-colour: #F56D50;
   --dark-colour: #221F20;
   --grey-colour: rgb(200, 200, 200);
+  --orange-colour: rgba(245, 109, 80, 1);
 }
 
 *,
@@ -41,3 +42,39 @@ h2,h3 {
   margin: 0 auto;
 }
 
+/* Court Buttons */
+.available {
+  background-color: var(--green-colour);
+}
+
+.unavailable {
+  background-color: darkslategrey;
+}
+
+.selected {
+  background-color: rgb(255, 174, 12);
+  color: black;
+}
+
+.court-button {
+  height: 28px; /* Figma: height = 28px, width = 60px */
+  width: 60px;
+  cursor: pointer;
+  border-radius: 7px;
+  border: 3px solid white;
+  flex-shrink: 0;
+  font-family: "Monserrat", sans-serif;
+  color: white;
+  font-size: small;
+}
+
+.court-button--rotated {
+  height: 60px;
+  width: 28px;
+}
+
+.court-button:hover,
+.court-button--rotated:hover {
+  transition: 0.01ms;
+  transform: scale(1.05);
+}
