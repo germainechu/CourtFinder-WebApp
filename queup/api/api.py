@@ -3,7 +3,6 @@ from flask import Flask, send_from_directory, jsonify, request
 import os
 from models.User import User
 from models.Court import Court
-import json
 
 app = Flask(__name__)
 # Register blueprints
