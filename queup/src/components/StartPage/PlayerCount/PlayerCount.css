@@ -14,7 +14,7 @@
     height: 40px; /* Height of the button */
     line-height: 40px; /* Center the text vertically */
     background-color: #fff;
-    border: none;
+    border: palegoldenrod;
     border-radius: 50%; /* Make it a circle */
     margin: 0 5px;
     cursor: pointer;

@@ -29,4 +29,5 @@
   text-align: center;
   height:42px;
   width: 225px;
+  border-color: var(--green-colour);
 }

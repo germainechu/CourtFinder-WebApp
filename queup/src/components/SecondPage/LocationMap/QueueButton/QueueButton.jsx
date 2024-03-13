@@ -5,10 +5,18 @@ import CourtInfo from './CourtInfo/CourtInfo';
 
 
 const QueueButton = () => {
-    const [showQueueItem, setShowQueueItem] = useState(false)
+    const [showQueueInfo, setShowQueueInfo] = useState(false)
+    const [progress, setProgress] = useState(0)
+
+    const updateProgress = (newProgress) => {
+      setProgress(newProgress)
+      console.log(newProgress)
+    }
     
     const handleClick = () => {
-        setShowQueueItem(true)
+        console.log("befoe: " + showQueueInfo)
+        setShowQueueInfo(!showQueueInfo)
+        console.log("after: " + !showQueueInfo)
     }
 
     //TODO: switch between QueueInfo and CourtInfo depending on:
@@ -18,8 +26,7 @@ const QueueButton = () => {
     
     return (
     <>
-    {showQueueItem && <QueueInfo/>}
-    {/* {showQueueItem && <CourtInfo/>} */}
+    {progress >= 100 ? <CourtInfo/> : showQueueInfo && <QueueInfo updateProgress={updateProgress} progress={progress}/>}
     <button className="queue-button" onClick={handleClick}>qup</button>
     
     

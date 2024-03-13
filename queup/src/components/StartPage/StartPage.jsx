@@ -26,7 +26,7 @@ const StartPage = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!username || !playerNum) {
-      alert("please fill in all fields");
+      alert("Please fill in your First Name.");
     } else {
       navigate(`/queue/${locationID}`);
     }
