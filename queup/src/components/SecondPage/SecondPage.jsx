@@ -10,8 +10,8 @@ const SecondPage = ({ username, playerNum }) => {
   const { locationID } = useParams();
   console.log(locationID);
   const locationDict = {"queen-elizabeth":"Queen Elizabeth Park", 
-                        "stanley-park-1": "Stanley Park (Main Courts)",
-                        "stanley-park-2": "Stanley Park (Beaver Lake)",
+                        "stanley-park-1": "Stanley Park - Main Courts",
+                        "stanley-park-2": "Stanley Park - Beaver Lake",
                         "kits": "Kitsilano Beach Park"}
 
   useEffect(() => {

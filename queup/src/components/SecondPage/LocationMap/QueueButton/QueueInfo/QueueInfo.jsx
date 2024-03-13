@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CountdownTimer from "./CountdownTimer";
 import { ProgressBar } from "react-bootstrap";
 import "./QueueInfo.css";
 
-const QueueItem = () => {
-  const [progress, setProgress] = useState(0);
-  const updateProgress = (newProgress) => {
-    setProgress(newProgress);
-    console.log(newProgress);
-  }
+const QueueInfo = ({ progress, updateProgress }) => {
 
   return (
     <>
@@ -23,4 +18,4 @@ const QueueItem = () => {
   );
 };
 
-export default QueueItem;
+export default QueueInfo;

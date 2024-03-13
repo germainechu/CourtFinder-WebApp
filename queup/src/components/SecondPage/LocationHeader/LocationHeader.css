@@ -1,13 +1,18 @@
+.location-header--container {
+  display: flex;
+  background-color: var(--green-colour); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  justify-content: left;
+  padding: 0 0 30px 15px;
+  text-wrap: wrap;
+}
+
 .location-header {
-    background-color: var(--green-colour); 
     color: white;
-    padding: 10px 20px;
-    border-radius: 10px; 
     display: flex;
     align-items: flex-start; 
-    justify-content: left; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    height: 100px; /* TODO: this should be auto */
+    height: 100%; /* TODO: this should be auto */
     font-family: "Montserrat", sans-serif;
     flex-direction: column;
     padding-top:30px;
