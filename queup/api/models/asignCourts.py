@@ -45,8 +45,8 @@ def assignCourt(curr):
 
 def moveCurrToEnd(node):
   second = node.next
-  tail = node;
-  node = second;
+  tail = node
+  node = second
 
 # case 1: all courts are occupied and queueList is not empty
 assignCourt(head)
