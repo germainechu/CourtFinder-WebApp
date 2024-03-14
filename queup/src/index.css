@@ -17,6 +17,7 @@ code {
   --dark-colour: #221F20;
   --grey-colour: rgb(200, 200, 200);
   --orange-colour: rgba(245, 109, 80, 1);
+  --blue-color: #10A9FF;
 }
 
 *,
@@ -37,6 +38,17 @@ h2,h3 {
   font-family: "Montserrat";
 }
 
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 350px;
+  text-wrap: wrap;
+  text-align: center;
+  line-height: 14px;
+  font-weight: 400;
+}
+
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
@@ -44,7 +56,7 @@ h2,h3 {
 
 /* Court Buttons */
 .available {
-  background-color: var(--green-colour);
+  background-color: var(--blue-color);
 }
 
 .unavailable {
@@ -57,11 +69,11 @@ h2,h3 {
 }
 
 .court-button {
-  height: 28px; /* Figma: height = 28px, width = 60px */
-  width: 60px;
+  height: 30px; /* Figma: height = 28px, width = 60px */
+  width: 70px;
   cursor: pointer;
   border-radius: 7px;
-  border: 3px solid white;
+  border: 4px solid white;
   flex-shrink: 0;
   font-family: "Monserrat", sans-serif;
   color: white;
@@ -69,12 +81,13 @@ h2,h3 {
 }
 
 .court-button--rotated {
-  height: 60px;
-  width: 28px;
+  height: 70px;
+  width: 30px;
 }
 
-.court-button:hover,
-.court-button--rotated:hover {
+.court-button:hover:enabled,
+.court-button--rotated:hover:enabled {
   transition: 0.01ms;
   transform: scale(1.05);
 }
+

@@ -20,10 +20,10 @@
 
 .court-info--container_text {
     display: flex;
-    width: 200px;
+    width: 160px;
     height:max-content;
     border-color: 3px solid black;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .court-info--text {

@@ -1,31 +1,68 @@
 .location-header--container {
   display: flex;
+  flex-direction: column;
   background-color: var(--green-colour); 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   justify-content: left;
-  padding: 0 0 30px 15px;
-  text-wrap: wrap;
+  /* padding: 0 0px 30px 0; */
+  padding: 10px 0px 10px 40px;
+  width: fit-content;
+  /* text-wrap: wrap; */
+}
+.white-logo { 
+  width:72px;
+  height:18px;
+  align-self: center;
+  margin-bottom: 1rem;
+
+}
+.location-header {
+  color: white;
+  height: 100%; 
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.location-header {
-    color: white;
-    display: flex;
-    align-items: flex-start; 
-    height: 100%; /* TODO: this should be auto */
-    font-family: "Montserrat", sans-serif;
-    flex-direction: column;
-    padding-top:30px;
-  }
-  .location-name {
-    align-self: center; 
-    width: 100%;
-    text-align: left; 
-    text-wrap: wrap;
-  }
-  .location-name {
-    margin: 0;
+.location-text {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-wrap: wrap;
+  gap: 0.5rem;
+  width: 70%;
+}
+
+.location-name {
     font-size: 2rem;
     font-weight: normal;
-  }
-  
+    text-wrap: wrap;
+
+}
+
+.location-status {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: flex-end;
+  padding-left: 40px;
+}
+
+.location-tennisboy{
+  width: 3.375rem;
+}
+
+.location-broadcast{
+  text-align: left;
+  width:100%;
+  font-size: small;
+}
+
+.court-traffic{
+  align-self: flex-start;
+  padding-left: 8px;
+}
+

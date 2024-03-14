@@ -1,7 +1,7 @@
 import LocationMap from "./LocationMap/LocationMap";
 import { useEffect, useState } from "react";
 import LocationHeader from "./LocationHeader/LocationHeader";
-import QueueButton from "./LocationMap/QueueButton/QueueButton";
+import QueueButton from "./QueueButton/QueueButton";
 import "./SecondPage.css";
 import { useParams } from "react-router-dom";
 
@@ -9,10 +9,12 @@ const SecondPage = ({ username, playerNum }) => {
   const [courts, setCourts] = useState([]);
   const { locationID } = useParams();
   console.log(locationID);
-  const locationDict = {"queen-elizabeth":"Queen Elizabeth Park", 
-                        "stanley-park-1": "Stanley Park - Main Courts",
-                        "stanley-park-2": "Stanley Park - Beaver Lake",
-                        "kits": "Kitsilano Beach Park"}
+  const locationDict = {
+    "queen-elizabeth": "Queen Elizabeth Park",
+    "stanley-park-1": "Stanley Park - Main Courts",
+    "stanley-park-2": "Stanley Park - Beaver Lake",
+    kits: "Kitsilano Beach Park",
+  };
 
   useEffect(() => {
     const fetchCourts = async () => {
@@ -53,19 +55,38 @@ const SecondPage = ({ username, playerNum }) => {
     }
   };
 
-  //TODO: need to pass rating from API
+  //TODO: use a for each through the CourtArray to check if any have "available" status. if so, continue showing the court number drop down.
+
+  // states to change button to be selected
+  const [selectButtonID, setSelectButtonID] = useState(null);
+  const toggleColor = (courtID) => {
+    setSelectButtonID((prevCourtID) =>
+      prevCourtID === courtID ? null : courtID
+    );
+  };
+  const [disableCourts, setDisableCourts] = useState(false);
+  
+  const highlightButton = (courtID) => {
+    setSelectButtonID(courtID)
+  }
+
   return (
     <div>
-      <LocationHeader
-        locationName={locationDict[locationID]}
-        rating={4}
-      ></LocationHeader>
-   
+      <LocationHeader locationName={locationDict[locationID]}></LocationHeader>
+
       <div className="second-page__main">
-        <LocationMap />
+        <LocationMap
+          selectButtonID={selectButtonID}
+          toggleColor={toggleColor}
+          disableCourts={disableCourts}
+        />
         <QueueButton
           className="queue-button"
           addToQueue={addToQueue}
+          selectButtonID={selectButtonID}
+          disableCourts ={disableCourts}
+          setDisableCourts ={setDisableCourts}
+          highlightButton={highlightButton}
         ></QueueButton>
       </div>
     </div>

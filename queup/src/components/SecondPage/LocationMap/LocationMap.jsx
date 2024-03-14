@@ -6,7 +6,7 @@ import SP2CourtFrame from "./CourtFrame/SP2CourtFrame";
 import SP1CourtFrame from "./CourtFrame/SP1CourtFrame";
 import KTCourtFrame from "./CourtFrame/KTCourtFrame";
 
-const LocationMap = () => {
+const LocationMap = ({ selectButtonID, toggleColor, disableCourts }) => {
   // TODO: add switching for different elements based on route
   // const locationIDToRender = locations.find((location) => location.id === locationID).id
   // TODO: when locationID is undefined, return empty page
@@ -33,32 +33,23 @@ const LocationMap = () => {
     }
     switch (locationID) {
       case "queen-elizabeth":
-        return <QECourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} />;
+        return <QECourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} disableCourts={disableCourts} />;
       case "stanley-park-1":
-        return <SP1CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
+        return <SP1CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} disableCourts={disableCourts} />;
       case "stanley-park-2":
-        return <SP2CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
+        return <SP2CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} disableCourts={disableCourts} />;
       case "kits":
-        return <KTCourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
+        return <KTCourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} disableCourts={disableCourts} />;
       default:
         console.log("wrong path");
     }
-  };
-  //TODO: use a for each through the CourtArray to check if any have "available" status. if so, continue showing the court number drop down.
-
-  const [selectButtonID, setSelectButtonID] = useState(null);
-  const toggleColor = (courtID) => {
-    setSelectButtonID((prevCourtID) =>
-      prevCourtID === courtID ? null : courtID
-    );
   };
 
   return (
     <>
       <div className="location-frame">
-        <p>
-          Looks like there are courts available. Please select which court you
-          will play on today!
+        <p className="location-frame--info">
+          Looks like there are no courts available. Please join the queue!
         </p>
         <div className="location-frame--background">
           <div className="location-frame--container">

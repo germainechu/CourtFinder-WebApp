@@ -72,16 +72,13 @@
     border-radius: 10px;
   }
 
-  p {
-    font-family: "Montserrat", sans-serif;
-    margin-top: 20px;
-    width: 350px;
-    text-wrap: wrap;
-    text-align: center;
-  }
-
   .tennis-court-frame {
     width: 100px; /* Let the width be determined by content */
+  }
+
+  .location-frame--info{
+    padding-top: 30px;
+    line-height: 30px;
   }
 
 
