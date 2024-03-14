@@ -13,5 +13,6 @@ class Court:
     
     # occupy a court by a user
     def occupyCourt(self, user):
+        self.occupied = True
         self.occupied_by = user.username
 

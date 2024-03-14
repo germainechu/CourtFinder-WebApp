@@ -11,6 +11,6 @@ class User:
     
     def getGroupSize(self):
         return self.playerNum
-    
-    # a user doesn't need to know which court they are playing on
-    # but a court should know which user is occupying the court
+
+# a user doesn't need to know which court they are playing on
+# but a court should know which user is occupying the court
