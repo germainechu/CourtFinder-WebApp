@@ -49,7 +49,7 @@ const LocationMap = ({ selectButtonID, toggleColor, disableCourts }) => {
     <>
       <div className="location-frame">
         <p className="location-frame--info">
-          Looks like there are no courts available. Please join the queue!
+          Looks like there are no courts available. Please click the button below to join the queue!
         </p>
         <div className="location-frame--background">
           <div className="location-frame--container">

@@ -29,7 +29,7 @@ return (
     <div className="location-header">
       <div className="location-text"> 
         <h1 className="location-name">{locationName}</h1>
-        <p className="location-broadcast">When you are done, please leave the queue for other players to join.</p>
+        <p className="location-broadcast">Click here for a short survey.</p>
       </div>
       <div className='location-status'>
       {/* {tennisBoy} */}
