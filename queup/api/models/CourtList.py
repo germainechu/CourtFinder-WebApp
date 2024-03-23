@@ -1,56 +1,59 @@
-from Court import Court
+from .Court import Court
 class CourtList:
     def __init__(self, court_num):
-        self.head = Court(None) # two dummy node for the head and tail
-        self.tail = Court(None)
-        self.head.next = self.tail
-        self.tail.next = None
-        id = 0
-        curr  = self.head
-        # construct a court list with a cour_num input
-        while(id < court_num):
-            self.head.next = Court(id)
-            id = id + 1
-        self.tail = curr
-    # return the node to be removed
-    def remove(self, node_id):
-        curr = self.head
-        prev = curr
+        self.head = None
+        self.tail = None
+        for i in range(court_num):
+            self.add_court(i)
 
-        while (curr!= None):
-            if curr.id == node_id and self.tail == self.haed: # only one node in the list
-                self.head.next = self.tail
-                return curr
-            elif (curr.id == node_id and curr == None): # node to remove is at tail
-                prev.next = None
-                self.tail = prev
-                prev.next = curr.next
-                return curr
-            elif curr.id == node_id and self.head == curr: # node to remove is at head
-                self.head.next = curr.next
-                return curr
-            curr = curr.next
-            prev = prev.next
-        raise Exception("Court not found")
+    def add_court(self, id):
+        new_court = Court(id)
+        if not self.head:  # If the list is empty
+            self.head = new_court
+            self.tail = new_court
+        else:
+            self.tail.next = new_court  # Append new court at the end
+            self.tail = new_court
 
-    def moveToHead(self, node):
-        node.next = self.head.next
-        self.head.next = node
-    
-    def moveToTail(self, node):
-        oldTail = self.tail
-        oldTail.next = node
-        node.next = None
-        self.tail = node
+    def remove_court(self, id):
+        current = self.head
+        previous = None
+        while current:
+            if current.id == id:
+                if previous:
+                    previous.next = current.next
+                else:
+                    self.head = current.next  # Removed head
+                if current == self.tail:
+                    self.tail = previous  # Updated tail if needed
+                return current
+            previous = current
+            current = current.next
+        return None  # Court not found
 
-    def moveNodeToFront(self, node_num):
-        node = self.remove(self, node_num)
-        self.moveToHead(self, node)
+    def find_court(self, id):
+        current = self.head
+        while current:
+            if current.id == id:
+                return current
+            current = current.next
+        return None  # Court not found
+        
+    def pop_head(self):
+        if not self.head:
+            return None  # Empty list
+        removed_court = self.head
+        self.head = self.head.next  # Move head to the next court
+        if self.head is None:  # If the list had only one court
+            self.tail = None  # List is now empty
+        return removed_court
 
-    def moveNodeToEnd(self, node_num):
-        node = self.remove(self, node_num)
-        self.moveNodeToEnd(self, node)
-
-# test the class
-courlist = CourtList(16)
-print(courlist.head.occupied)
+    def move_head_to_tail(self):
+        court = self.pop_head()
+        if court:
+            court.next = None  # Disconnect the popped court from the list
+            if self.tail:
+                self.tail.next = court
+                self.tail = court
+            else:  # If the list was empty
+                self.head = self.tail = court

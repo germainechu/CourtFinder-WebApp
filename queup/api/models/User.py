@@ -1,7 +1,9 @@
 from datetime import datetime
-# User needs to persist in the databse
+import uuid  # Import the uuid module
+
 class User:
     def __init__(self, username, playerNum):
+        self.id = int(uuid.uuid4().hex, 16)
         self.username = username
         self.playerNum = playerNum
         self.joined_at = datetime.now()
@@ -11,6 +13,11 @@ class User:
     
     def getGroupSize(self):
         return self.playerNum
-
-# a user doesn't need to know which court they are playing on
-# but a court should know which user is occupying the court
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'playerNum': self.playerNum,
+            'joined_at': self.joined_at.isoformat()
+        }

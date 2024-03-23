@@ -1,4 +1,3 @@
-from User import User
 class Court:
     def __init__(self, id): # initialize new court class
         self.id = id
@@ -15,4 +14,3 @@ class Court:
     def occupyCourt(self, user):
         self.occupied = True
         self.occupied_by = user.username
-
