@@ -1,13 +1,16 @@
 class Court:
-    time_played = 0
-    nextCourt = None
-
-    def __init__(self, id):
+    def __init__(self, id): # initialize new court class
         self.id = id
-        self.occupied_by = None 
+        self.occupied=False
+        self.occupied_by = None
+        self.next = None
 
-    def getUsers(self):
-        return self.users
-
-    def getUserPosition(self, name):
-        return self.users.index(name)
+    # make a court available 
+    def freeCourt(self):
+        self.occupied_by = None
+        self.occupied = False
+    
+    # occupy a court by a user
+    def occupyCourt(self, user):
+        self.occupied = True
+        self.occupied_by = user.username
