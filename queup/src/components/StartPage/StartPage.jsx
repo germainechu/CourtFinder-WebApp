@@ -14,12 +14,7 @@ const StartPage = ({
   const navigate = useNavigate();
   const { locationID } = useParams();
   // get ids from api?
-  const locationIDs = [
-    "queen-elizabeth",
-    "stanley-park-1",
-    "stanley-park-2",
-    "kits",
-  ];
+  const locationIDs = ["1", "2", "3", "4"];
   const handleChange = (event) => {
     updateUsername(event.target.value);
   };
@@ -40,7 +35,7 @@ const StartPage = ({
         <form id="username_form" type="submit" onSubmit={handleSubmit}>
           <label htmlFor="name"></label>
           <input
-          className="input-field"
+            className="input-field"
             name="name"
             type="text"
             placeholder="First Name"

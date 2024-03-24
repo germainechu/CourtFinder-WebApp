@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 import LocationHeader from "./LocationHeader/LocationHeader";
 import QueueButton from "./LocationMap/QueueButton/QueueButton";
 import "./SecondPage.css";
+import axios from "axios";
 
 import { useParams } from "react-router-dom";
 
 const SecondPage = ({ username, playerNum }) => {
+  console.log("env", process.env);
   const base_url = process.env.REACT_APP_BASE_URL;
+  console.log("base url", base_url);
   const { locationID } = useParams();
-  console.log(locationID);
+
   const locationDict = {
     1: "Queen Elizabeth Park",
     2: "Stanley Park - Main Courts",
@@ -35,21 +38,17 @@ const SecondPage = ({ username, playerNum }) => {
     //   };
     //   fetchCourts();
   }, []);
-
   const addToQueue = async () => {
     const queue_item = {
       username: username,
       playerNum: playerNum,
     };
     try {
-      const response = await fetch(`${base_url}/api/queues/${locationID}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(queue_item),
-      });
-      const result = await response.json();
+      const response = await axios.post(
+        `http://127.0.0.1:80/api/queues/${parseInt(locationID)}`,
+        queue_item // Directly passing the object
+      );
+      const result = response.data; // Accessing data directly from the response
       console.log("Success:", result);
     } catch (error) {
       console.error("Error:", error);

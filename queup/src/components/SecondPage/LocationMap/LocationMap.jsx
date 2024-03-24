@@ -16,30 +16,51 @@ const LocationMap = () => {
     if (!locationID) {
       return (
         <ul>
-          <Link to="/queue/queen-elizabeth">
+          <Link to="/queue/1">
             <li>Queen Elizabeth Park</li>
           </Link>
-          <Link to="/queue/stanley-park-1">
+          <Link to="/queue/2">
             <li>Stanley Park (Main)</li>
           </Link>
-          <Link to="/queue/stanley-park-2">
+          <Link to="/queue/3">
             <li>Stanley Park (Beaver Lake)</li>
           </Link>
-          <Link to="/queue/kits">
+          <Link to="/queue/4">
             <li>Kitsilano Beach Park</li>
           </Link>
         </ul>
       );
     }
-    switch (locationID) {
-      case "queen-elizabeth":
-        return <QECourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor} />;
-      case "stanley-park-1":
-        return <SP1CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
-      case "stanley-park-2":
-        return <SP2CourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
-      case "kits":
-        return <KTCourtFrame selectButtonID={selectButtonID} toggleColor={toggleColor}/>;
+    console.log("LOCATION ID IN LOCATIONMAP:" + typeof locationID);
+    switch (parseInt(locationID)) {
+      case 1:
+        return (
+          <QECourtFrame
+            selectButtonID={selectButtonID}
+            toggleColor={toggleColor}
+          />
+        );
+      case 2:
+        return (
+          <SP1CourtFrame
+            selectButtonID={selectButtonID}
+            toggleColor={toggleColor}
+          />
+        );
+      case 3:
+        return (
+          <SP2CourtFrame
+            selectButtonID={selectButtonID}
+            toggleColor={toggleColor}
+          />
+        );
+      case 4:
+        return (
+          <KTCourtFrame
+            selectButtonID={selectButtonID}
+            toggleColor={toggleColor}
+          />
+        );
       default:
         console.log("wrong path");
     }
