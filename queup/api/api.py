@@ -1,8 +1,14 @@
 from flask import Flask, send_from_directory, jsonify, request
 from blueprints.courts import courts as courts_blueprint
 from blueprints.queues import queues as queues_blueprint
+from flask_cors import CORS
 import os
+
 app = Flask(__name__)
+# TODO: LOCALHOST to be replaced with http://queup.ca
+CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+
 # Register blueprints
 # In api.py
 app.register_blueprint(courts_blueprint, url_prefix='/api/courts')
