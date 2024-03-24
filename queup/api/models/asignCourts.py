@@ -16,7 +16,7 @@ def updateCourtList(head, tail, target):
                 prev = curr
                 curr = curr.next
     #found the court that just got empty
-    if !queueList.empty():
+    if not queueList.empty():
         # assign the first user in queuelist to curr court and move curr court to the end of the linkedlist
         assignCourt(curr)
         #move curr court to the end of linkedlist once court has been assigned
@@ -32,7 +32,7 @@ def updateCourtList(head, tail, target):
 
 # a process to always check for court assignment
 def assignCourt(curr):
-  while(!queueList.empty()): 
+  while(not queueList.empty()): 
       # find soonest available court 
       # get First of CourtList
       courtToAssign = curr
@@ -45,8 +45,8 @@ def assignCourt(curr):
 
 def moveCurrToEnd(node):
   second = node.next
-  tail = node;
-  node = second;
+  tail = node
+  node = second
 
 # case 1: all courts are occupied and queueList is not empty
 assignCourt(head)
