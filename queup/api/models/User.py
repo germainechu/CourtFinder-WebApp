@@ -14,7 +14,7 @@ class User:
     def getGroupSize(self):
         return self.playerNum
     
-    def to_dict(self):
+    def toDict(self):
         return {
             'id': self.id,
             'username': self.username,

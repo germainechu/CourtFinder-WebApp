@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StartPage from "./components/StartPage/StartPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SecondPage from "./components/SecondPage/SecondPage";
+import SecondPage from "./components/SecondPage/SecondPage.jsx";
 
 const App = () => {
   const [username, setUsername] = useState("");

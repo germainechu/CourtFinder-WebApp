@@ -6,7 +6,7 @@ class CourtList:
         for i in range(court_num):
             self.add_court(i)
 
-    def add_court(self, id):
+    def addCourt(self, id):
         new_court = Court(id)
         if not self.head:  # If the list is empty
             self.head = new_court
@@ -15,7 +15,7 @@ class CourtList:
             self.tail.next = new_court  # Append new court at the end
             self.tail = new_court
 
-    def remove_court(self, id):
+    def removeCourt(self, id):
         current = self.head
         previous = None
         while current:
@@ -31,7 +31,7 @@ class CourtList:
             current = current.next
         return None  # Court not found
 
-    def find_court(self, id):
+    def findCourt(self, id):
         current = self.head
         while current:
             if current.id == id:
@@ -39,7 +39,7 @@ class CourtList:
             current = current.next
         return None  # Court not found
         
-    def pop_head(self):
+    def popHead(self):
         if not self.head:
             return None  # Empty list
         removed_court = self.head
@@ -48,7 +48,7 @@ class CourtList:
             self.tail = None  # List is now empty
         return removed_court
 
-    def move_head_to_tail(self):
+    def moveHeadToTail(self):
         court = self.pop_head()
         if court:
             court.next = None  # Disconnect the popped court from the list
@@ -57,3 +57,12 @@ class CourtList:
                 self.tail = court
             else:  # If the list was empty
                 self.head = self.tail = court
+
+    # convert a linkedlist courts int a list of dict of court
+    def toDict(self):
+        court_list = []
+        current = self.head
+        while current:
+            court_list.append(current.toDict())
+            current = current.next
+        return court_list

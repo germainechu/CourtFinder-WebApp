@@ -1,6 +1,6 @@
-from flask import request, jsonify, Blueprint
+from flask import request, jsonify, Blueprint, current_app
 from models import locations, User
-
+import redis
 queues = Blueprint('queues', __name__)
 
 # Endpoint for queues
@@ -17,7 +17,7 @@ def get_queue(location_id):
         print(e)
         return jsonify({'status': 'error', 'message': 'There was an issue retrieving the queue'}), 500
     
-
+# endpoint to post a new user item to the queuelist in location with location_id
 @queues.route('/<int:location_id>', methods=['POST'])
 def post_queue(location_id):
     try: 
@@ -32,6 +32,8 @@ def post_queue(location_id):
         queue_data = [user.to_dict() for user in location.queueList.users]
         # get the soonest available court
         court =  location.courList.head
+        # store user data in redis
+        # redis_conn = current_app.redis_conn
         # send queue data and cour in response
         return jsonify({'status': 'success', 'queue': queue_data, 'soonest_available_court': court.id}), 200
     except Exception as e:

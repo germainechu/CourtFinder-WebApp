@@ -2,6 +2,14 @@ from flask import Flask, send_from_directory, jsonify, request
 from blueprints.courts import courts as courts_blueprint
 from blueprints.queues import queues as queues_blueprint
 import os
+import redis
+
+# Connect to Redis
+redis_host = 'localhost'  # Update with your Redis host
+redis_port = 6379         # Default Redis port
+redis_db = 0              # Redis database index
+redis_conn = redis.StrictRedis(host=redis_host, port=redis_port, db=redis_db)
+
 app = Flask(__name__)
 # Register blueprints
 # In api.py

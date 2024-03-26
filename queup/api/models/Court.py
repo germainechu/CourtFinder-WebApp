@@ -14,3 +14,6 @@ class Court:
     def occupyCourt(self, user):
         self.occupied = True
         self.occupied_by = user.username
+    
+    def toDict(self):
+        return {'id': self.id, "occupied": self.occupied, "occupied_by":self.occupied_by, "next_id": self.next.id}
