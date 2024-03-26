@@ -1,0 +1,27 @@
+.queue-info--container{
+    display:flex;
+    flex-direction: column;
+    height: 69px;
+    width: 326px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 20px rgba(16, 59, 38, 0.3)
+}
+
+
+.progress{
+    --bs-progress-bar-bg: #10A9FF;
+}
+
+.queue-info-align {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+}
+
+.queue-info--time-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+}
+

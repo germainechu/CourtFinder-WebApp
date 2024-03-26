@@ -2,8 +2,8 @@
     display: flex;
     background-color: #E8E8E8; /* Adjust the color to match your needs */
     border-radius: 40vw; /* Rounded corners */
-    padding: 8px;
-    max-width: 228px;
+    padding: 10px;
+    max-width: 300px;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
@@ -14,7 +14,7 @@
     height: 40px; /* Height of the button */
     line-height: 40px; /* Center the text vertically */
     background-color: #fff;
-    border: none;
+    border: palegoldenrod;
     border-radius: 50%; /* Make it a circle */
     margin: 0 5px;
     cursor: pointer;

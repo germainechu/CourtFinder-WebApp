@@ -1,0 +1,46 @@
+.court-info--container_button {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 69px;
+    width: 326px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(16, 59, 38, 0.3);
+    border: rgba(245, 109, 80, 1);
+    background-color: orange;
+}
+.court-info--container_button:hover{
+    transform: scale(1.08);
+    transition: 0.2ms;
+    background-color:rgba(245, 109, 80, 1);
+    box-shadow: 10px 10px 30px rgba(16, 59, 38, 0.3);
+}
+
+.court-info--container_text {
+    display: flex;
+    width: 200px;
+    height:max-content;
+    border-color: 3px solid black;
+    justify-content: space-evenly;
+}
+
+.court-info--text {
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+    font-family: "Montserrat";
+    font-size: larger;
+}
+.court-info--text_specific {
+    color: rgb(255, 255, 255);
+    text-shadow:1px 2px 2px rgba(245, 109, 80, 1);
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+    font-family: "Montserrat";
+    font-size: larger;
+}
+

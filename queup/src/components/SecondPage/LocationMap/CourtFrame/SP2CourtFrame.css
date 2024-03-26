@@ -1,54 +1,14 @@
 
-.court-frame--top {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-sizing: content-box;
-    width: 270px;
-    padding: 30px 40px 30px 40px;
-    align-items: center;
-    gap: 10px;
-    border: 1px rgb(211, 124, 124);
-    background-color: rgba(1,211,140,0.33);
-    border-radius: 10px 10px 0 0;
-  }
-
-  .court-button {
-    height: 28px; /* Figma: height = 28px, width = 60px */
-    width: 60px;
-    cursor: pointer;
-    border-radius: 7px;
-    border: 3px solid white;
-    flex-shrink: 0;
-    font-family: "Monserrat", sans-serif;
-    color: white;
-    font-size: small;
-  }
-
-  .court-button--rotated {
-    height: 60px; 
-    width: 28px;
-  }
-
-  .court-button:hover, .court-button--rotated:hover {
-    transition: 0.01ms;
-    transform: scale(1.05);
-  }
-  
-  /* Remove margin from the last button */
-  .court-button:last-child {
-    margin-bottom: 0;
-  }
-  
-  .available {
-    background-color: var(--green-colour);
-  }
-
-  .unavailable {
-    background-color: darkslategrey;
-  }
-
-  .selected {
-    background-color: yellow;
-    color: darkslategray;
+.SP2-court-frame--top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  width: 280px;
+  padding: 30px 30px 30px 30px;
+  align-items: center;
+  gap: 13.3px;
+  border: 1px rgb(211, 124, 124);
+  background-color: rgba(1, 211, 140, 0.33);
+  border-radius: 10px 10px 10px 10px;
   }

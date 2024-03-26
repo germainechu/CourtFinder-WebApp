@@ -30,7 +30,23 @@ const App = () => {
           }
         />
         <Route
+          exact
+          path="/:locationID"
+          element={
+            <StartPage
+              username={username}
+              playerNum={playerNum}
+              updatePlayerNum={updatePlayerNum}
+              updateUsername={updateUsername}
+            />
+          }
+        />
+        <Route
           path="/queue"
+          element={<SecondPage username={username} playerNum={playerNum} />}
+        />{" "}
+        <Route
+          path="/queue/:locationID"
           element={<SecondPage username={username} playerNum={playerNum} />}
         />
       </Routes>

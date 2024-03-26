@@ -1,68 +1,26 @@
 
-.court-frame--top {
+.QE-court-frame--top {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: content-box;
     width: 140px;
-    padding: 20px 10px 20px 20px;
-    gap: 5px;
+    padding: 20px 20px 20px 20px;
+    gap: 15px;
     border: 1px rgb(211, 124, 124);
     background-color: rgba(1,211,140,0.33);
     border-radius: 10px 10px 0 0;
   }
   
-  .court-frame--bottom {
+  .QE-court-frame--bottom {
     display: flex;
     flex-direction: row;
     width: fit-content;
     padding: 10px;
     justify-content: flex-start;
     border: 1px white;
-    padding: 20px;
-    gap: 5px;
+    padding: 15px;
+    gap: 13px;
     background-color: rgba(1,211,140,0.33);
     border-radius: 0 10px 10px 10px;
-  }
-
-  .court-button {
-    height: 28px; /* Figma: height = 28px, width = 60px */
-    width: 60px;
-    cursor: pointer;
-    border-radius: 7px;
-    border: 3px solid white;
-    flex-shrink: 0;
-    font-family: "Monserrat", sans-serif;
-    color: white;
-    font-size: small;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  }
-
-  .court-button--rotated {
-    height: 60px; 
-    width: 28px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  }
-
-  .court-button:hover, .court-button--rotated:hover {
-    transition: 0.01ms;
-    transform: scale(1.05);
-  }
-  
-  /* Remove margin from the last button */
-  .court-button:last-child {
-    margin-bottom: 0;
-  }
-  
-  .available {
-    background-color: var(--green-colour);
-  }
-
-  .unavailable {
-    background-color: darkslategrey;
-  }
-
-  .selected {
-    background-color: yellow;
-    color: darkslategray;
   }

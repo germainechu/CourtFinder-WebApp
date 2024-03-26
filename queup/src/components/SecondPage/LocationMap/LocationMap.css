@@ -1,55 +1,61 @@
 .location-frame {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   align-items: center; /* This will center the children (map-frame and QueueButton) horizontally */
 }
 
 .location-frame--background {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 100%; /* Set the width or use a specific size */
-    height: 400px; /* Set the height or use a specific size */
-    position: relative;
-    background-size:cover;
-    background-position: center;
-    background-repeat: repeat;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-  .location-frame--container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Set the width or use a specific size */
+  height: 424px; /* Set the height or use a specific size */
+  position: relative;
+  background-size:cover;
+  background-position: center;
+  background-repeat: repeat;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-shadow: 3px 5px 50px rgba(16, 59, 38, 0.3);
+  border-radius: 30px;
+}
 
+.location-frame--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.location-frame--map{
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start to stick them together */
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: 400px;
+  height: 100%;
+  padding-bottom: 40px;
+  border-radius: 10px;
+  
+}
   .selected-court-box {
     background-color: #fff; /* White background */
     border: 2px solid #ccc; /* Light grey border */
     border-radius: 10px; /* Rounded corners */
     padding: 10px 20px; /* Padding inside the box */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
-    margin-top: -70px; /* Adjust this value to position the box as needed */
+    margin-top: -60px; /* Adjust this value to position the box as needed */
     font-size: 1rem; /* Adjust font size as needed */
     color: #333; /* Text color */
     width: auto; /* Adjust width as needed */
+    height: 45px;
     font-family: "Montserrat", sans-serif;
-  }
-  
-  .location-frame--map{
-    background-color: #F4F4F4;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the start to stick them together */
-    justify-content: center;
-    box-sizing: border-box;
-    padding-left: 30px;
-    width: 400px;
-    height: 370px;
-    border-radius: 10px;
   }
 
   .court-wrapper {
@@ -64,10 +70,6 @@
     width: 400px;
     height: 350px;
     border-radius: 10px;
-  }
-
-  .queue-button {
-    margin-top: 10px;
   }
 
   p {
